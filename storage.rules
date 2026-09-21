@@ -1,0 +1,42 @@
+// ==========================================================================
+// Scale Up Nano — Firebase Storage security rules
+//
+// NOTE: as of the latest version of this site, photos are compressed
+// client-side and stored directly inside Firestore documents instead of
+// Firebase Storage — this avoids requiring the paid Blaze plan just to
+// upload a photo. That means these Storage rules are NOT currently
+// needed by the site. This file is kept only in case you want to switch
+// back to real Storage later (e.g. if you upgrade to Blaze for other
+// reasons and want higher-quality, non-resized photos).
+//
+// Paste this into: Firebase Console → Storage → Rules tab → Publish
+//
+// Logic: anyone can view uploaded photos (member photos, memory photos),
+// but only a signed-in admin can upload or delete them.
+// ==========================================================================
+
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Visitors can attach a photo to a memory submission — capped at 5MB,
+    // images only. Everything else still requires an admin sign-in.
+    match /memory-submissions/{fileName} {
+      allow read: if true;
+      allow create: if request.resource.size < 5 * 1024 * 1024
+                    && request.resource.contentType.matches('image/.*');
+    }
+
+    // Visitors can attach a file to an event's sign-up/feedback form —
+    // capped at 10MB, any file type since answers could be photos, PDFs, etc.
+    match /form-uploads/{eventId}/{fileName} {
+      allow read: if true;
+      allow create: if request.resource.size < 10 * 1024 * 1024;
+    }
+
+    match /{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+}

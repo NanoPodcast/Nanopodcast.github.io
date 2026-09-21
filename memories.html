@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Photos and moments from NanoPod's activities.">
+<title>Memories — NanoPod</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  :root{
+    --violet:#ef6b52;
+    --indigo:#d1543c;
+    --cyan:#f2967d;
+    --line:rgba(239,107,82,0.18);
+    --line-strong:rgba(239,107,82,0.4);
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-icon.png" alt="NanoPod">
+      <span class="up">Nano<span class="gradient-text">Pod</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="projects.html" data-i18n="nav.episodes">Episodes</a></li>
+      <li><a href="members.html" data-i18n="nav.team">Our Team</a></li>
+      <li><a href="events.html" data-i18n="nav.upcoming">Upcoming Eps</a></li>
+      <li><a href="join.html" class="nav-cta" data-i18n="nav.join">Join Us</a></li>
+    </ul>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="ar">AR</button>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero" style="padding-top:64px; padding-bottom:40px;">
+  <div class="eyebrow" data-i18n="memories.eyebrow">Memories</div>
+  <h1 style="font-size:clamp(28px,4.4vw,44px);" data-i18n="memories.title">Moments from the club</h1>
+  <p class="lead" data-i18n="memories.lead">A running photo log of sessions, builds, and events — added from the admin dashboard as they happen.</p>
+</header>
+
+<section class="section">
+  <div class="grid grid-3" data-render="memories"></div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="section-head">
+    <div class="eyebrow">Add yours</div>
+    <h2>Got a memory to share?</h2>
+  </div>
+  <div data-render="shareMemoryForm" style="display:flex; justify-content:center;"></div>
+</section>
+
+<footer class="site-footer">
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="projects.html">Projects</a>
+    <a href="members.html">Members</a>
+    <a href="opportunities.html">Opportunities</a>
+    <a href="links.html">Links</a>
+    <a href="memories.html">Memories</a>
+    <a href="join.html">Join</a>
+  </div>
+  <div class="fine" data-i18n="footer.fine">SCALE UP NANO · SCHOOL SCIENTIFIC CLUB · NSNN</div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/image-utils.js"></script>
+<script src="js/collections-config.js"></script>
+<script src="js/render-public.js"></script>
+<script src="js/i18n-data.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

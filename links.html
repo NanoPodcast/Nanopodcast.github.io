@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="All of NanoPod's links in one place.">
+<title>Links — NanoPod</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  :root{
+    --violet:#4ea1e8;
+    --indigo:#3a7fc4;
+    --cyan:#6ec8f2;
+    --line:rgba(78,161,232,0.18);
+    --line-strong:rgba(78,161,232,0.4);
+  }
+</style>
+</head>
+<body>
+
+<span class="admin-badge">ADMIN MODE</span>
+<div class="admin-banner">Admin mode active — bracketed fields across the site are now editable in this browser tab.</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-icon.png" alt="NanoPod">
+      <span class="up">Nano<span class="gradient-text">Pod</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="projects.html" data-i18n="nav.episodes">Episodes</a></li>
+      <li><a href="members.html" data-i18n="nav.team">Our Team</a></li>
+      <li><a href="events.html" data-i18n="nav.upcoming">Upcoming Eps</a></li>
+      <li><a href="join.html" class="nav-cta" data-i18n="nav.join">Join Us</a></li>
+    </ul>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="ar">AR</button>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero" style="padding-top:64px; padding-bottom:32px;">
+  <div class="orbit-mark" style="width:120px;height:120px;">
+    <img src="assets/logo-icon.png" alt="NanoPod atom mark">
+  </div>
+  <div class="eyebrow" data-i18n="links.eyebrow">Links</div>
+  <h1 style="font-size:clamp(26px,4vw,38px);" data-i18n="links.title">Everywhere to find us</h1>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="links-list" data-render="links"></div>
+
+  <div style="text-align:center; margin-top:36px;">
+    <div class="eyebrow" data-i18n="links.scan" style="margin-bottom:14px; display:inline-flex;">Scan to follow</div>
+    <div data-render="qrCode"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="projects.html">Projects</a>
+    <a href="members.html">Members</a>
+    <a href="opportunities.html">Opportunities</a>
+    <a href="links.html">Links</a>
+    <a href="memories.html">Memories</a>
+    <a href="join.html">Join</a>
+  </div>
+  <div class="fine" data-i18n="footer.fine">SCALE UP NANO · SCHOOL SCIENTIFIC CLUB · NSNN</div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/qr-default.js"></script>
+<script src="js/image-utils.js"></script>
+<script src="js/collections-config.js"></script>
+<script src="js/render-public.js"></script>
+<script src="js/i18n-data.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Upcoming episodes and recording sessions from NanoPod.">
+<title>Upcoming Episodes — NanoPod</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  :root{
+    --violet:#2fb87a;
+    --indigo:#249e68;
+    --cyan:#3fd6b0;
+    --line:rgba(47,184,122,0.18);
+    --line-strong:rgba(47,184,122,0.4);
+  }
+</style>
+</head>
+<body>
+
+<span class="admin-badge">ADMIN MODE</span>
+<div class="admin-banner">Admin mode active — bracketed fields across the site are now editable in this browser tab.</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-icon.png" alt="NanoPod">
+      <span class="up">Nano<span class="gradient-text">Pod</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="projects.html" data-i18n="nav.episodes">Episodes</a></li>
+      <li><a href="members.html" data-i18n="nav.team">Our Team</a></li>
+      <li><a href="events.html" data-i18n="nav.upcoming">Upcoming Eps</a></li>
+      <li><a href="join.html" class="nav-cta" data-i18n="nav.join">Join Us</a></li>
+    </ul>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="ar">AR</button>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero" style="padding-top:64px; padding-bottom:40px;">
+  <div class="eyebrow" data-i18n="events.eyebrow">Events</div>
+  <h1 style="font-size:clamp(28px,4.4vw,44px);" data-i18n="events.title">Sessions &amp; workshops</h1>
+  <p class="lead" data-i18n="events.lead">Weekly meetups covering all four labs — talks, hands-on builds, and open lab hours where members work on their own projects side by side.</p>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <div class="eyebrow">Schedule</div>
+    <h2>This term</h2>
+    <p>Add each session as it's confirmed — date, time, room, and a short line on what it covers.</p>
+  </div>
+  <div class="grid grid-2" data-render="events"></div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div class="eyebrow" data-i18n="eventsFormat.eyebrow">Format</div>
+    <h2 data-i18n="eventsFormat.title">What a typical week looks like</h2>
+  </div>
+  <div class="grid grid-3">
+    <div class="card">
+      <span class="tag" data-i18n="eventsFormat.talk">TALK</span>
+      <h3 data-i18n="eventsFormat.talkTime">20–30 min</h3>
+      <p data-i18n="eventsFormat.talkDesc">A member or guest walks through one concept, paper, or project — kept short on purpose so there's time for questions.</p>
+    </div>
+    <div class="card">
+      <span class="tag" data-i18n="eventsFormat.workshop">WORKSHOP</span>
+      <h3 data-i18n="eventsFormat.workshopTime">Hands-on</h3>
+      <p data-i18n="eventsFormat.workshopDesc">Bring a laptop or show up to the lab — we work through a build or exercise together, step by step.</p>
+    </div>
+    <div class="card">
+      <span class="tag" data-i18n="eventsFormat.openLab">OPEN LAB</span>
+      <h3 data-i18n="eventsFormat.openLabTime">Unstructured time</h3>
+      <p data-i18n="eventsFormat.openLabDesc">No agenda — just a room, equipment, and other members working on their own projects if you want feedback or company.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="projects.html">Projects</a>
+    <a href="members.html">Members</a>
+    <a href="opportunities.html">Opportunities</a>
+    <a href="links.html">Links</a>
+    <a href="memories.html">Memories</a>
+    <a href="join.html">Join</a>
+  </div>
+  <div class="fine" data-i18n="footer.fine">SCALE UP NANO · SCHOOL SCIENTIFIC CLUB · NSNN</div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/image-utils.js"></script>
+<script src="js/collections-config.js"></script>
+<script src="js/render-public.js"></script>
+<script src="js/i18n-data.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
