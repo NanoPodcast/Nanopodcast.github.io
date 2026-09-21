@@ -58,7 +58,7 @@ const I18N = {
     },
     joinForm: {
       cta: "Join via Discord →", name: "Full name", email: "School email",
-      track: "Which lab interests you most?", note: "Anything you want to build or learn?",
+      track: "Do you have a talent?", note: "Tell us more",
       submit: "Submit", notSure: "Not sure yet"
     },
     eventsFormat: {
@@ -119,7 +119,7 @@ const I18N = {
     },
     joinForm: {
       cta: "Rejoindre via Discord →", name: "Nom complet", email: "Email scolaire",
-      track: "Quel pôle vous intéresse le plus ?", note: "Quelque chose que vous voulez construire ou apprendre ?",
+      track: "Avez-vous un talent particulier ?", note: "Dites-nous en plus",
       submit: "Envoyer", notSure: "Pas encore sûr"
     },
     eventsFormat: {
@@ -180,7 +180,7 @@ const I18N = {
     },
     joinForm: {
       cta: "انضم عبر Discord ←", name: "الاسم الكامل", email: "البريد المدرسي",
-      track: "أي مسار يهمك أكثر؟", note: "ما الذي تريد بناءه أو تعلمه؟",
+      track: "هل لديك موهبة؟", note: "أخبرنا المزيد",
       submit: "إرسال", notSure: "لست متأكدًا بعد"
     },
     eventsFormat: {
