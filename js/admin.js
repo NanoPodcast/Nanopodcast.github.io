@@ -600,13 +600,32 @@ async function renderMemorySubmissions(panel) {
 function getPath(obj, path) {
   return path.split(".").reduce(function (o, k) { return o && o[k] !== undefined ? o[k] : null; }, obj);
 }
+
+/* Free machine translation (MyMemory API, no key required) — used to
+   auto-fill French and Arabic whenever an English text is saved.
+   HTML-bearing fields (containing "<") are skipped to avoid mangling
+   markup like <br> tags. Machine translation is a starting point, not
+   final copy — anything can still be hand-edited afterward on its own
+   language tab; the next English save will overwrite it again though. */
+async function translateText(text, targetLang) {
+  const url = "https://api.mymemory.translated.net/get?q=" + encodeURIComponent(text) + "&langpair=en|" + targetLang;
+  const res = await fetch(url);
+  const data = await res.json();
+  if (data && data.responseData && data.responseData.translatedText) {
+    return data.responseData.translatedText;
+  }
+  throw new Error("No translation returned");
+}
+
 let textsState = { category: Object.keys(TEXT_SCHEMA)[0], lang: "en", overrides: null };
 
 async function renderTextsPanel(panel) {
   panel.innerHTML =
     '<div class="panel-head"><h2>Texts</h2>' +
     '<p class="muted">Edit the site\'s built-in copy — headings, buttons, empty-state messages — without touching any code. ' +
-    'Anything you don\'t change here just keeps using the default wording.</p></div>' +
+    'Anything you don\'t change here just keeps using the default wording. Editing on the <b>EN</b> tab and saving also ' +
+    'auto-translates that text into French and Arabic — you can still fine-tune those manually on their own tabs, but the ' +
+    'next English save will overwrite them again.</p></div>' +
     '<div id="texts-cats" class="admin-tabs" style="padding:0 0 14px;"></div>' +
     '<div id="texts-langs" class="pill-picker" style="margin-bottom:20px;"></div>' +
     '<div id="texts-fields"></div>' +
@@ -680,7 +699,9 @@ async function renderTextsPanel(panel) {
     btn.disabled = true;
     btn.textContent = "Saving…";
     const updated = Object.assign({}, langOverrides);
+    const changedKeys = [];
     fieldsBox.querySelectorAll("[data-key]").forEach(function (el) {
+      if (updated[el.dataset.key] !== el.value) changedKeys.push(el.dataset.key);
       updated[el.dataset.key] = el.value;
     });
     try {
@@ -689,7 +710,35 @@ async function renderTextsPanel(panel) {
         "Saving"
       );
       textsState.overrides[textsState.lang] = updated;
-      document.getElementById("texts-status").textContent = "Saved.";
+
+      if (textsState.lang === "en" && changedKeys.length) {
+        btn.textContent = "Translating…";
+        document.getElementById("texts-status").textContent = "Saved — translating into French and Arabic…";
+        const otherLangs = TEXT_LANGUAGES.map(function (l) { return l.value; }).filter(function (v) { return v !== "en"; });
+        let translateFailed = false;
+        for (const lang of otherLangs) {
+          const langUpdated = Object.assign({}, textsState.overrides[lang] || {});
+          for (const key of changedKeys) {
+            const val = updated[key];
+            if (!val || val.indexOf("<") !== -1) continue; // skip empty / HTML-bearing fields
+            try {
+              langUpdated[key] = await translateText(val, lang);
+            } catch (e) {
+              translateFailed = true;
+            }
+          }
+          await withTimeout(
+            db.collection("settings").doc("texts").set({ [lang]: langUpdated }, { merge: true }),
+            "Saving translation"
+          );
+          textsState.overrides[lang] = langUpdated;
+        }
+        document.getElementById("texts-status").textContent = translateFailed
+          ? "Saved. Some fields couldn't be auto-translated (translation service hiccup) — check the FR/AR tabs and touch them up if needed."
+          : "Saved — auto-translated into French and Arabic.";
+      } else {
+        document.getElementById("texts-status").textContent = "Saved.";
+      }
     } catch (err) {
       document.getElementById("texts-status").textContent = "Couldn't save: " + err.message;
     }

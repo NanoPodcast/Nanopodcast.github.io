@@ -146,6 +146,27 @@ const RENDERERS = {
     reveal(container);
   },
 
+  crew: async function (container) {
+    container.innerHTML = loadingState();
+    const snap = await safeGet("crew");
+    if (!snap || snap.empty) {
+      container.innerHTML = emptyState(t("common.noCrew", "No crew listed yet."));
+      return;
+    }
+    container.innerHTML = "";
+    snap.forEach(function (doc) {
+      const d = doc.data();
+      const card = document.createElement("div");
+      card.className = "card member-card";
+      const avatar = d.photoURL
+        ? '<img src="' + d.photoURL + '" class="avatar-photo" alt="' + escapeHtml(d.name || "") + '">'
+        : '<div class="avatar">' + initials(d.name) + '</div>';
+      card.innerHTML = avatar + '<h3>' + escapeHtml(d.name || "") + '</h3><p>' + escapeHtml(d.role || "") + '</p>';
+      container.appendChild(card);
+    });
+    reveal(container);
+  },
+
   opportunities: async function (container) {
     container.innerHTML = loadingState();
     const snap = await safeGet("opportunities");

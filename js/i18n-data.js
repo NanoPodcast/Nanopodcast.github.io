@@ -23,7 +23,7 @@
 const I18N = {
   en: {
     dir: "ltr",
-    nav: { home: "Home", episodes: "Episodes", team: "Our Team", upcoming: "Upcoming Eps", join: "Join Us" },
+    nav: { home: "Home", episodes: "Episodes", team: "Our Team", crew: "Behind the Camera", upcoming: "Upcoming Eps", join: "Join Us" },
     footer: { fine: "NANOPOD · SCHOOL PODCAST · NSNN" },
     home: {
       eyebrow: "School Podcast · NSNN",
@@ -56,7 +56,7 @@ const I18N = {
     },
     common: {
       loading: "Loading…", noEvents: "No events posted yet — check back soon.", noProjects: "No projects posted yet.",
-      noMembers: "No members listed yet.", noOpportunities: "No opportunities posted yet.", noLinks: "No links added yet.",
+      noMembers: "No members listed yet.", noCrew: "No crew listed yet.", noOpportunities: "No opportunities posted yet.", noLinks: "No links added yet.",
       noMemories: "No memories posted yet — this page fills up as the show records episodes."
     },
     joinForm: {
@@ -77,6 +77,8 @@ const I18N = {
       lead: "Full episodes and behind-the-scenes cuts — some solo interviews, some multi-part series carried across a season." },
     members: { eyebrow: "Our Team", title: "Who's behind the mic",
       lead: "Hosts, producers, editors, and crew — added and kept current from the admin dashboard." },
+    crew: { eyebrow: "Behind the Camera", title: "The people you don't hear",
+      lead: "Photography, editing, design, and everything visual — the crew that makes NanoPod look as good as it sounds." },
     opportunities: { eyebrow: "Opportunities", title: "Internships, competitions & grants",
       lead: "A running list of opportunities relevant to nanoscience, robotics, code, and health — curated by the show for its team." },
     memories: { eyebrow: "Memories", title: "Moments from the show",
@@ -87,7 +89,7 @@ const I18N = {
 
   fr: {
     dir: "ltr",
-    nav: { home: "Accueil", episodes: "Épisodes", team: "Notre équipe", upcoming: "Prochains épisodes", join: "Rejoindre" },
+    nav: { home: "Accueil", episodes: "Épisodes", team: "Notre équipe", crew: "Derrière la caméra", upcoming: "Prochains épisodes", join: "Rejoindre" },
     footer: { fine: "NANOPOD · PODCAST SCOLAIRE · NSNN" },
     home: {
       eyebrow: "Podcast scolaire · NSNN",
@@ -119,7 +121,7 @@ const I18N = {
     },
     common: {
       loading: "Chargement…", noEvents: "Aucun événement publié pour l'instant — revenez bientôt.", noProjects: "Aucun projet publié pour l'instant.",
-      noMembers: "Aucun membre listé pour l'instant.", noOpportunities: "Aucune opportunité publiée pour l'instant.", noLinks: "Aucun lien ajouté pour l'instant.",
+      noMembers: "Aucun membre listé pour l'instant.", noCrew: "Aucune personne listée pour l'instant.", noOpportunities: "Aucune opportunité publiée pour l'instant.", noLinks: "Aucun lien ajouté pour l'instant.",
       noMemories: "Aucun souvenir publié pour l'instant — cette page se remplit au fil des épisodes enregistrés."
     },
     joinForm: {
@@ -139,6 +141,8 @@ const I18N = {
       lead: "Épisodes complets et extraits des coulisses — certains en interview solo, d'autres en série à plusieurs voix sur une saison." },
     members: { eyebrow: "Notre équipe", title: "Qui est derrière le micro",
       lead: "Animateurs, producteurs, monteurs et équipe — ajoutés et tenus à jour depuis le tableau de bord admin." },
+    crew: { eyebrow: "Derrière la caméra", title: "Les personnes qu'on n'entend pas",
+      lead: "Photographie, montage, design, et tout le visuel — l'équipe qui fait que NanoPod est aussi beau à voir qu'à écouter." },
     opportunities: { eyebrow: "Opportunités", title: "Stages, concours et bourses",
       lead: "Une liste continue d'opportunités liées à la nanoscience, la robotique, le code et la santé — sélectionnées par l'émission pour son équipe." },
     links: { eyebrow: "Liens", title: "Nous retrouver partout", scan: "Scannez pour nous suivre" },
@@ -150,7 +154,7 @@ const I18N = {
 
   ar: {
     dir: "rtl",
-    nav: { home: "الرئيسية", episodes: "الحلقات", team: "فريقنا", upcoming: "الحلقات القادمة", join: "انضم إلينا" },
+    nav: { home: "الرئيسية", episodes: "الحلقات", team: "فريقنا", crew: "خلف الكاميرا", upcoming: "الحلقات القادمة", join: "انضم إلينا" },
     footer: { fine: "نانوبود · بودكاست مدرسي · NSNN" },
     home: {
       eyebrow: "بودكاست مدرسي · NSNN",
@@ -182,7 +186,7 @@ const I18N = {
     },
     common: {
       loading: "جارٍ التحميل…", noEvents: "لا توجد فعاليات منشورة بعد — عد لاحقًا.", noProjects: "لا توجد مشاريع منشورة بعد.",
-      noMembers: "لا يوجد أعضاء مدرجون بعد.", noOpportunities: "لا توجد فرص منشورة بعد.", noLinks: "لا توجد روابط مضافة بعد.",
+      noMembers: "لا يوجد أعضاء مدرجون بعد.", noCrew: "لا يوجد أفراد مدرجون بعد.", noOpportunities: "لا توجد فرص منشورة بعد.", noLinks: "لا توجد روابط مضافة بعد.",
       noMemories: "لا توجد ذكريات منشورة بعد — تمتلئ هذه الصفحة مع حلقات البرنامج المسجّلة."
     },
     joinForm: {
@@ -202,6 +206,8 @@ const I18N = {
       lead: "حلقات كاملة ولقطات من الكواليس — بعضها مقابلات فردية وبعضها سلاسل متعددة الأجزاء عبر الموسم." },
     members: { eyebrow: "فريقنا", title: "من خلف الميكروفون",
       lead: "المقدمون والمنتجون والمحررون والفريق — تتم إضافتهم وتحديثهم من لوحة التحكم." },
+    crew: { eyebrow: "خلف الكاميرا", title: "الأشخاص الذين لا نسمعهم",
+      lead: "التصوير والمونتاج والتصميم وكل ما هو مرئي — الفريق الذي يجعل نانوبود جميلًا بالصورة كما هو بالصوت." },
     opportunities: { eyebrow: "الفرص", title: "تدريبات ومسابقات ومنح",
       lead: "قائمة مستمرة بالفرص المتعلقة بعلم النانو والروبوتات والبرمجة والصحة — يختارها البرنامج لفريقه." },
     links: { eyebrow: "الروابط", title: "تجدنا في كل مكان", scan: "امسح للمتابعة" },

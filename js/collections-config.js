@@ -28,13 +28,11 @@ const TEXT_SCHEMA = {
     label: "Navigation & Footer",
     fields: [
       { key: "nav.home", label: "Nav: Home" },
-      { key: "nav.events", label: "Nav: Events" },
-      { key: "nav.projects", label: "Nav: Projects" },
-      { key: "nav.members", label: "Nav: Members" },
-      { key: "nav.opportunities", label: "Nav: Opportunities" },
-      { key: "nav.links", label: "Nav: Links" },
-      { key: "nav.memories", label: "Nav: Memories" },
-      { key: "nav.join", label: "Nav: Join" },
+      { key: "nav.episodes", label: "Nav: Episodes" },
+      { key: "nav.team", label: "Nav: Our Team" },
+      { key: "nav.crew", label: "Nav: Behind the Camera" },
+      { key: "nav.upcoming", label: "Nav: Upcoming Eps" },
+      { key: "nav.join", label: "Nav: Join Us" },
       { key: "footer.fine", label: "Footer fine print" }
     ]
   },
@@ -126,6 +124,14 @@ const TEXT_SCHEMA = {
       { key: "members.lead", label: "Page subtitle", type: "textarea" }
     ]
   },
+  crew: {
+    label: "Behind the Camera",
+    fields: [
+      { key: "crew.eyebrow", label: "Page eyebrow" },
+      { key: "crew.title", label: "Page title" },
+      { key: "crew.lead", label: "Page subtitle", type: "textarea" }
+    ]
+  },
   opportunities: {
     label: "Opportunities",
     fields: [
@@ -193,6 +199,17 @@ const COLLECTIONS = {
     fields: [
       { key: "name",   label: "Name",              type: "text",  required: true },
       { key: "role",   label: "Role",              type: "text" },
+      { key: "photoURL", label: "Photo",           type: "image" },
+      { key: "order",  label: "Display order",     type: "number", default: 0 }
+    ]
+  },
+
+  crew: {
+    label: "Behind the Camera",
+    order: "order",
+    fields: [
+      { key: "name",   label: "Name",              type: "text",  required: true },
+      { key: "role",   label: "Role (e.g. Photographer, Editor)", type: "text" },
       { key: "photoURL", label: "Photo",           type: "image" },
       { key: "order",  label: "Display order",     type: "number", default: 0 }
     ]
