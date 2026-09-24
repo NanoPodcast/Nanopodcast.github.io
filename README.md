@@ -82,7 +82,7 @@ can add/edit/delete anything or read submitted forms.
 
 ### 7. Add your GitHub Pages domain to the allowed list
 - **Authentication → Settings → Authorized domains → Add domain**
-- Add `scaleupnano.github.io` (your Pages domain)
+- Add your GitHub Pages domain (e.g. `<your-username>.github.io`)
 
 ### 8. (Optional) Turn on Analytics
 Skip this if you don't care about visitor numbers — the site works fine
@@ -119,7 +119,7 @@ without it. Takes about two minutes if you want it:
 
 ## Part 2 — Push to GitHub
 
-Replace everything in your `scaleupnano/scale-up-nano` repo with the
+Replace everything in your GitHub repo with the
 contents of this zip (delete the old files first, or just overwrite —
 either works since the filenames are mostly the same, plus a few new ones:
 `admin.html`, `memories.html`, `firestore.rules`, `storage.rules`, and new
@@ -135,7 +135,7 @@ Settings → Pages should already be correctly configured from last time
 
 ## Part 3 — Using the admin dashboard
 
-1. Visit `https://scaleupnano.github.io/scale-up-nano/admin.html`
+1. Visit `https://<your-username>.github.io/<your-repo-name>/admin.html`
 2. Sign in with the email/password you created in Part 1, step 6
 3. Use the tabs across the top: **Members, Projects, Events & formulas,
    Opportunities, Links, QR Code, Memories, Memory submissions,

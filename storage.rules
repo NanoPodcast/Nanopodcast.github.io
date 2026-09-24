@@ -1,5 +1,5 @@
 // ==========================================================================
-// Scale Up Nano — Firebase Storage security rules
+// NanoPod — Firebase Storage security rules
 //
 // NOTE: as of the latest version of this site, photos are compressed
 // client-side and stored directly inside Firestore documents instead of

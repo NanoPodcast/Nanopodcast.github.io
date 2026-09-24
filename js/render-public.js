@@ -214,13 +214,13 @@ const RENDERERS = {
   },
 
   stats: async function (container) {
-    const [members, events, projects] = await Promise.all([
-      safeCount("members"), safeCount("events"), safeCount("projects")
+    const [members, crew, episodes] = await Promise.all([
+      safeCount("members"), safeCount("crew"), safeCount("projects")
     ]);
     const nums = container.querySelectorAll("[data-stat]");
     nums.forEach(function (el) {
       const key = el.dataset.stat;
-      const val = key === "members" ? members : key === "events" ? events : projects;
+      const val = key === "members" ? (members + crew) : key === "crew" ? crew : episodes;
       el.textContent = val;
     });
   },

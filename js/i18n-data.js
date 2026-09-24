@@ -23,7 +23,7 @@
 const I18N = {
   en: {
     dir: "ltr",
-    nav: { home: "Home", episodes: "Episodes", team: "Our Team", crew: "Behind the Camera", upcoming: "Upcoming Eps", join: "Join Us" },
+    nav: { home: "Home", episodes: "Episodes", team: "Our Team", crew: "Behind the Camera", links: "Links", upcoming: "Upcoming Eps", join: "Join Us" },
     footer: { fine: "NANOPOD · SCHOOL PODCAST · NSNN" },
     home: {
       eyebrow: "School Podcast · NSNN",
@@ -42,7 +42,7 @@ const I18N = {
       lab5Title: "New episodes, every season", lab5Desc: "Short conversations, long ones, solo segments — see what's coming up on the Upcoming Eps page.",
       lab6Title: "Open to every student", lab6Desc: "No experience needed to join the crew, suggest a guest, or just come watch a recording — just show up curious.",
       statsEyebrow: "By the numbers", statsTitle: "A young show, moving fast",
-      statMembers: "Active members", statEvents: "Events run so far", statProjects: "Projects in progress",
+      statMembers: "Active members (crew + our team)", statCrew: "Active crew", statEpisodes: "Total episodes done",
       nextEyebrow: "Next up", nextTitle: "Upcoming event",
       whyEyebrow: "Why join us", whyTitle: "Straight from our members",
       whyDesc: "We'd rather let the people already here explain it than sell it to you ourselves.",
@@ -89,7 +89,7 @@ const I18N = {
 
   fr: {
     dir: "ltr",
-    nav: { home: "Accueil", episodes: "Épisodes", team: "Notre équipe", crew: "Derrière la caméra", upcoming: "Prochains épisodes", join: "Rejoindre" },
+    nav: { home: "Accueil", episodes: "Épisodes", team: "Notre équipe", crew: "Derrière la caméra", links: "Liens", upcoming: "Prochains épisodes", join: "Rejoindre" },
     footer: { fine: "NANOPOD · PODCAST SCOLAIRE · NSNN" },
     home: {
       eyebrow: "Podcast scolaire · NSNN",
@@ -107,7 +107,7 @@ const I18N = {
       lab5Title: "De nouveaux épisodes, chaque saison", lab5Desc: "Des conversations courtes, d'autres longues, des segments solo — voir ce qui arrive sur la page Prochains épisodes.",
       lab6Title: "Ouvert à tous les élèves", lab6Desc: "Aucune expérience requise pour rejoindre l'équipe, proposer un invité, ou simplement venir voir un enregistrement — il suffit d'être curieux.",
       statsEyebrow: "En chiffres", statsTitle: "Une jeune émission qui avance vite",
-      statMembers: "Membres actifs", statEvents: "Événements organisés", statProjects: "Projets en cours",
+      statMembers: "Membres actifs (équipe + technique)", statCrew: "Équipe technique active", statEpisodes: "Total des épisodes",
       nextEyebrow: "À venir", nextTitle: "Prochain événement",
       whyEyebrow: "Pourquoi nous rejoindre", whyTitle: "Directement par nos membres",
       whyDesc: "On préfère laisser ceux qui sont déjà là vous l'expliquer plutôt que de vous le vendre nous-mêmes.",
@@ -154,7 +154,7 @@ const I18N = {
 
   ar: {
     dir: "rtl",
-    nav: { home: "الرئيسية", episodes: "الحلقات", team: "فريقنا", crew: "خلف الكاميرا", upcoming: "الحلقات القادمة", join: "انضم إلينا" },
+    nav: { home: "الرئيسية", episodes: "الحلقات", team: "فريقنا", crew: "خلف الكاميرا", links: "الروابط", upcoming: "الحلقات القادمة", join: "انضم إلينا" },
     footer: { fine: "نانوبود · بودكاست مدرسي · NSNN" },
     home: {
       eyebrow: "بودكاست مدرسي · NSNN",
@@ -172,7 +172,7 @@ const I18N = {
       lab5Title: "حلقات جديدة كل موسم", lab5Desc: "محادثات قصيرة وأخرى طويلة وحلقات فردية — شاهد ما هو قادم في صفحة الحلقات القادمة.",
       lab6Title: "مفتوح لكل طالب", lab6Desc: "لا حاجة لأي خبرة للانضمام إلى الفريق، أو اقتراح ضيف، أو حتى لحضور جلسة تسجيل — فقط كن فضوليًا.",
       statsEyebrow: "بالأرقام", statsTitle: "برنامج فتيّ يتحرك بسرعة",
-      statMembers: "أعضاء نشطون", statEvents: "فعاليات أُقيمت", statProjects: "مشاريع قيد التنفيذ",
+      statMembers: "أعضاء نشطون (الفريق التقني وفريقنا)", statCrew: "الفريق التقني النشط", statEpisodes: "إجمالي الحلقات المنجزة",
       nextEyebrow: "قريبًا", nextTitle: "الفعالية القادمة",
       whyEyebrow: "لماذا تنضم إلينا", whyTitle: "بصوت أعضائنا مباشرة",
       whyDesc: "نفضّل أن يشرح لك ذلك من هم بالفعل هنا بدل أن نبيعك الفكرة بأنفسنا.",
