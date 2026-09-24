@@ -484,15 +484,19 @@ function startCountdown(container, targetIso) {
 function emptyState(msg) {
   return "<div class='slot'>" + escapeHtml(msg) + "</div>";
 }
-/* Atom-shaped loading spinner shown while a Firestore collection fetches. */
+/* Pulsing microphone loading state shown while a Firestore collection fetches. */
 function loadingState() {
   return (
-    "<div class='atom-loading'>" +
-      "<div class='atom-spinner'>" +
-        "<span class='ring ring-1'><span class='ring-spin'></span></span>" +
-        "<span class='ring ring-2'><span class='ring-spin'></span></span>" +
-        "<span class='ring ring-3'><span class='ring-spin'></span></span>" +
-        "<span class='nucleus'></span>" +
+    "<div class='mic-loading'>" +
+      "<div class='mic-spinner'>" +
+        "<span class='mic-wave mic-wave-1'></span>" +
+        "<span class='mic-wave mic-wave-2'></span>" +
+        "<svg viewBox='0 0 24 24' width='40' height='40'>" +
+          "<rect class='mic-body' x='9' y='2' width='6' height='12' rx='3'></rect>" +
+          "<path class='mic-stand' d='M5 11a7 7 0 0 0 14 0'></path>" +
+          "<line class='mic-stand' x1='12' y1='18' x2='12' y2='22'></line>" +
+          "<line class='mic-stand' x1='8' y1='22' x2='16' y2='22'></line>" +
+        "</svg>" +
       "</div>" +
       "<p class='muted loading-text'>" + t('common.loading', 'Loading…') + "</p>" +
     "</div>"

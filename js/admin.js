@@ -43,9 +43,10 @@ els.logoutBtn.addEventListener("click", function () {
 });
 
 /* ---------- Tab scaffolding ---------- */
-const TAB_ORDER = ["members", "projects", "events", "opportunities", "links", "qrCode", "memories", "memorySubmissions", "joinRequests", "texts"];
+const TAB_ORDER = ["members", "crew", "projects", "events", "opportunities", "links", "qrCode", "memories", "memorySubmissions", "joinRequests", "texts"];
 const TAB_LABELS = {
   members: "Members",
+  crew: "Crew",
   projects: "Projects",
   events: "Events",
   opportunities: "Opportunities",
